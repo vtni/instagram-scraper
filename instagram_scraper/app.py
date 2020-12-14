@@ -19,6 +19,7 @@ import textwrap
 import time
 import xml.etree.ElementTree as ET
 import moviepy.editor as mpe
+import random
 
 try:
     from urllib.parse import urlparse
@@ -658,6 +659,7 @@ class InstagramScraper(object):
                 # Crawls the media and sends it to the executor.
                 try:
 
+                    self.sleep(random.uniform(1.1, 5.5))
                     self.get_media(dst, executor, future_to_item, user)
 
                     # Displays the progress bar of completed downloads. Might not even pop up if all media is downloaded while
